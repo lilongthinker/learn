@@ -1,8 +1,8 @@
 learn
 =====
 
-#some thing learn and save
+##something-about-sem the sem ppt
 
-##add line and commit;
+
 
 git push; put all the local responsoty to the remote
