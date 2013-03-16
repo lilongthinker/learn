@@ -49,5 +49,7 @@ Function<PDO,Long> pdoGroupByCustIdFunction = new Function<PDO, Long>() {
 ImmutableListMultimap<Long,AdgroupDO> adgroupMap = Multimaps.index(ImmutableSet.copyOf(list),pdoGroupByCustIdFunction);
 
 println adgroupMap
+//        {3=[one, two], 5=[three], 4=[four, five, sixt]}
+//        {1=[collection.AdgroupDO@f8395f, collection.AdgroupDO@7e9ce2], 2=[collection.AdgroupDO@6dbdc9], 3=[collection.AdgroupDO@c6eff5]}
 
 
