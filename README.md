@@ -1,7 +1,9 @@
 #learn
 =====
 
-##something-about-sem the sem ppt
+##something-about-sem 
+the sem ppt
+
 ##git的一些命令
 git push; put all the local responsoty to the remote
 ##设计工具需求畅想
