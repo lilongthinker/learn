@@ -28,6 +28,8 @@ Function<String,Integer> lengthFunction = new Function<String,Integer>(){
 ImmutableListMultimap<Integer,String> digitsByLength = Multimaps.index(digits,lengthFunction)
 
 println digitsByLength
+//output:
+//        {3=[one, two], 5=[three], 4=[four, five, sixt]}
 
 interface PDO {
     Long getCustId();
@@ -50,7 +52,6 @@ ImmutableListMultimap<Long,AdgroupDO> adgroupMap = Multimaps.index(ImmutableSet.
 
 println adgroupMap
 //output:
-//        {3=[one, two], 5=[three], 4=[four, five, sixt]}
 //        {1=[collection.AdgroupDO@f8395f, collection.AdgroupDO@7e9ce2], 2=[collection.AdgroupDO@6dbdc9], 3=[collection.AdgroupDO@c6eff5]}
 
 
