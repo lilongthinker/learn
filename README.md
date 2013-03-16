@@ -1,4 +1,4 @@
-learn
+#learn
 =====
 
 ##something-about-sem the sem ppt
