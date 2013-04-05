@@ -39,7 +39,12 @@ class AdgroupDO implements PDO {
     Long custId;
 }
 
-List<AdgroupDO> list = [new AdgroupDO(custId: 1),new AdgroupDO(custId: 1),new AdgroupDO(custId: 2),new AdgroupDO(custId: 3)]
+List<AdgroupDO> adgroupList = [
+        new AdgroupDO(custId: 1),
+        new AdgroupDO(custId: 1),
+        new AdgroupDO(custId: 2),
+        new AdgroupDO(custId: 3)
+]
 
 Function<PDO,Long> pdoGroupByCustIdFunction = new Function<PDO, Long>() {
     @Override
@@ -48,7 +53,7 @@ Function<PDO,Long> pdoGroupByCustIdFunction = new Function<PDO, Long>() {
     }
 }
 
-ImmutableListMultimap<Long,AdgroupDO> adgroupMap = Multimaps.index(ImmutableSet.copyOf(list),pdoGroupByCustIdFunction);
+ImmutableListMultimap<Long,AdgroupDO> adgroupMap = Multimaps.index(ImmutableSet.copyOf(adgroupList),pdoGroupByCustIdFunction);
 
 println adgroupMap
 //output:
