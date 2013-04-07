@@ -3,6 +3,7 @@ package collection
 import com.google.common.base.Function
 import com.google.common.collect.ImmutableListMultimap
 import com.google.common.collect.ImmutableSet
+import com.google.common.collect.Lists
 import com.google.common.collect.Multimaps
 
 /**
@@ -52,11 +53,25 @@ Function<PDO,Long> pdoGroupByCustIdFunction = new Function<PDO, Long>() {
         return input.custId
     }
 }
-
+////////////////////////////////////////group by ////////////////////////////////////
 ImmutableListMultimap<Long,AdgroupDO> adgroupMap = Multimaps.index(ImmutableSet.copyOf(adgroupList),pdoGroupByCustIdFunction);
 
 println adgroupMap
 //output:
 //        {1=[collection.AdgroupDO@f8395f, collection.AdgroupDO@7e9ce2], 2=[collection.AdgroupDO@6dbdc9], 3=[collection.AdgroupDO@c6eff5]}
+
+
+
+
+
+////////////////////////////////transform
+List<Long> custIdList  = Lists.transform(adgroupList, new Function<AdgroupDO, Long>() {//此处可以与上面使用同一个函数
+    @Override
+    Long apply(AdgroupDO input) {
+        return input.getCustId();
+    }
+});
+
+println custIdList         //output: [1, 1, 2, 3]
 
 

@@ -55,7 +55,8 @@
     <pre><b>这里介绍的所有方法你都可以自己通过代码来实现，但是为什么不用呢？</b></pre>
     <pre>
         官网： http://code.google.com/p/guava-libraries/
-        文档： http://www.tfnico.com/presentations/google-guava
+        官网文档: http://code.google.com/p/guava-libraries/wiki/GuavaExplained
+        中文：http://www.letonlife.com/writing-clean-code-with-google-guava-part-1-870
     </pre>
 </section>
 
@@ -130,44 +131,14 @@
 </section>
 
 <section class="slide" id="design-db">
-    <h2>Design Check</h2>
+    <h2>Preconditions</h2>
 
-    <h3>DB design derby &amp; mysql</h3>
-    使用要求
-    <ol>
-        <li>sytax 不同数据库之间语法的差异非常清楚，包括DDL&DML</li>
-        <li><strong>create all tables auto with a command</strong></li>
-    </ol>
-    好处
-    <ol>
-        <li>数据独立不会互相干扰</li>
-        <li>运行更独立稳定</li>
-        <li>测试运行更快</li>
-        <li>enum 替代部分常量如，协议的状态，公司的状态，协议的内容，从而使数据定义更清晰一致</li>
-    </ol>
-    缺点
-    <ol>
-        <li>enum(状态) 其存储采用的是直接存储其code(String content)，可读性更强，但在大规模的数据上无论是索引还是占用空间都不是最佳方案,需要的是typehandler(基于ibatis)</li>
-        <li>注释欠缺，全部都在DO上面,db暂无</li>
-    </ol>
+
 </section>
 
 
 <section class="slide" id="design-dao">
-    <h2>Design Check</h2>
-
-    <h3>DAO design</h3>
-    <ol>
-        <li>interface继承体系
-            <img src="interface-h-q.png">
-        </li>
-        <li>abstract impl继承体系
-            <img src="abstract-impl-h.png">
-        </li>
-        <li>代码复用</li>
-        <li>object-oriented &amp; lazy loading</li>
-        <li>同质sql少 同质sql具体见下页</li>
-    </ol>
+    <h2>Functional Idioms</h2>
 </section>
 
 
