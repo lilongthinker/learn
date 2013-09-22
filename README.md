@@ -34,6 +34,86 @@ GPS可以提供这么一种东西，可以通过授权，让指定的人实时�
     }
     
     
+##参数校验工具类    
+    
+    public class ValidationUtil {
+        static Logger logger = Logger.getLogger(ValidationUtil.class);
+    
+    
+        public static void checkNotNull(Object object, String code) throws ValidationException {
+            if (object == null) {
+                logger.info(code);
+                throw new ValidationException(null, code);
+            }
+        }
+    
+        public static void checkNotEmpty(String target, boolean trim, String code) throws ValidationException {
+            if (trim) {
+                if (!(target == null || "".equals(target.trim()))) {
+                    logger.info(target +" is empty,if trim");
+                    throw new ValidationException(target, code);
+                }
+            } else {
+                if (!(target == null || "".equals(target))) {
+                    logger.info(target + " is empty, even if not trim");
+                    throw new ValidationException(target, code);
+                }
+            }
+    
+        }
+    
+        public static void checkNotEmpty(String target, String code) throws ValidationException {
+            checkNotEmpty(target, false, code);
+        }
+    
+        public static void checkLength(String target, Integer min, Integer max, String code) throws ValidationException {
+            Integer length = 0;
+            if (target != null) {
+                length = target.length();
+            }
+            if (!(length >= min && length <= max)) {
+                logger.info("the length of ["+target + "] not in ["+min+","+max+"] ");
+                throw new ValidationException(target, code);
+            }
+        }
+    
+        public static void checkLength(String target, Integer max, String code) throws ValidationException {
+            checkLength(target, 0, max, code);
+        }
+    
+        public static void checkEnum(Object target, Set<Object> allEnum, String code) throws ValidationException {
+            if (!allEnum.contains(target)) {
+                throw new ValidationException(target, code);
+            }
+        }
+    
+        public static void checkEnum(Integer target, Set<Integer> allEnum, String code) throws ValidationException {
+            if (!allEnum.contains(target)) {
+                logger.info(target +"not in ["+LogHelper.toString(allEnum)+"]");
+                throw new ValidationException(target, code);
+            }
+        }
+    
+        public static void checkEnum(Long target, Set<Long> allEnum, String code) throws ValidationException {
+            if (!allEnum.contains(target)) {
+                throw new ValidationException(target, code);
+            }
+        }
+    
+        public static void checkEnum(String target, Set<String> allEnum, String code) throws ValidationException {
+            if (!allEnum.contains(target)) {
+                throw new ValidationException(target, code);
+            }
+        }
+    
+        public static Set<Integer> makeEnum(Integer... allEnum) {
+            Set<Integer> all = new HashSet<Integer>();
+            Collections.addAll(all, allEnum);
+            return all;
+        }
+    }
+    
+    
     
 
     
