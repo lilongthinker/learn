@@ -5,7 +5,8 @@
 the sem ppt
 
 ## git的一些命令
-git push; put all the local responsoty to the remote
+* git push;  put all the local responsoty to the remote
+
 ## 设计工具需求畅想
 幻想这么一种工具 用 纯文本来描述图形就像markdown这种语言一样，数据和展现分开，这样的好处
 * 图形的维护不是那么的复杂了
