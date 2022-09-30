@@ -6,10 +6,16 @@
   "dependencies": {
     "@midwayjs/bootstrap": "^2.3.0",
     "@midwayjs/core": "^2.3.0",
-    "@midwayjs/web": "^2.3.0",
     "@midwayjs/decorator": "^2.3.0",
+    "@midwayjs/prometheus": "^3.5.3",
+    "@midwayjs/web": "^2.3.0",
+    "@opentelemetry/api": "^1.2.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.33.1",
+    "@opentelemetry/exporter-jaeger": "^1.7.0",
+    "@opentelemetry/sdk-node": "^0.33.0",
     "egg": "^2.0.0",
-    "egg-scripts": "^2.10.0"
+    "egg-scripts": "^2.10.0",
+    "opentelemetry-arms": "^1.0.0"
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.0.0",
