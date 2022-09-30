@@ -27,4 +27,6 @@ df = pl.DataFrame(
         ]
     )
 )
+
+print(df)
 shape: (5, 8)
