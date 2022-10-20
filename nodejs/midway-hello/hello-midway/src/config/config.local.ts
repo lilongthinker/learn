@@ -5,5 +5,5 @@
  * 如果想了解更多细节，请访问 https://eggjs.org/zh-cn/core/security.html#安全威胁-csrf-的防范
  */
 export const security = {
-  csrf: false,
+  csrf: {enable: false},
 };
