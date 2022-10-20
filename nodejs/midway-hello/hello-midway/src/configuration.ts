@@ -11,5 +11,7 @@ export class ContainerLifeCycle implements ILifeCycle {
   @App()
   app: Application;
 
-  async onReady() {}
+  async onReady() {
+    //可以尝试设置一些属性，保证能够提供一些请求来与外部框架进行沟通
+  }
 }
